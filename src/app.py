@@ -29,11 +29,18 @@ def correction():
     #création de thread
     thread = openai.beta.threads.create()
 
-    #création du prompt
-    message = openai.beta.threads.messages.create(
+    #création du context
+    #question
+    openai.beta.threads.messages.create(
+        thread_id=thread.id,
+        role="assistant",
+        content=question
+    )
+    #réponse
+    openai.beta.threads.messages.create(
         thread_id=thread.id,
         role="user",
-        content=f"La question posée est : \n\n{question}\n\nMa réponse est : \n\n{answer}\n\n"
+        content=answer
     )
 
     #lancement de la run
