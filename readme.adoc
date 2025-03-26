@@ -1,0 +1,13 @@
+= Informations Utiles
+
+== Avant de lancer le programme pour la première fois
+
+----
+./setup.sh
+----
+
+== Lancer le programme sous windows
+
+----
+./dev.sh
+----
